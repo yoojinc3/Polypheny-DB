@@ -258,7 +258,7 @@ tasks.register('runDev', JavaExec) {
 }
 
 startScripts {
-    defaultJvmOpts += ['-Xmx8g', '-XX:+HeapDumpOnOutOfMemoryError', '-Dfile.encoding=UTF-8']
+    defaultJvmOpts += ['-Xmx8g', '-XX:+HeapDumpOnOutOfMemoryError', '-Dfile.encoding=UTF-8', '-XX:ActiveProcessorCount=1']
     dependsOn(shadowJar)
     dependsOn(":jar")
 }
