@@ -26,6 +26,34 @@
         </logger> -->
         <!-- <logger name="org.polypheny.db.plan.hep.HepPlanner" level="TRACE">
         </logger> -->
+
+        <!-- <logger name="jdbc.sqlonly" level="DEBUG">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger> -->
+        <logger name="jdbc.sqltiming" level="INFO">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
+        <!-- <logger name="jdbc.audit" level="WARN">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
+        <logger name="jdbc.resultset" level="ERROR">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
+        <logger name="jdbc.connection" level="WARN">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger> -->
+        
+        <logger name="org.polypheny.db.adapter.monetdb" level="DEBUG">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
+
+        <logger name="org.mongodb.driver" level="INFO">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
+
+        <logger name="org.mongodb.driver.protocol.command" level="DEBUG">
+            <AppenderRef ref="ConsoleAppender"/>
+        </logger>
         <Root level="error"/>
     </Loggers>
 </Configuration>

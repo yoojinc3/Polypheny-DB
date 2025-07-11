@@ -159,7 +159,8 @@ public class MonetdbStore extends AbstractJdbcStore {
 
     private ConnectionFactory createConnectionFactory() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName( "nl.cwi.monetdb.jdbc.MonetDriver" );
+        // dataSource.setDriverClassName( "nl.cwi.monetdb.jdbc.MonetDriver" );
+        dataSource.setDriverClassName( "net.sf.log4jdbc.sql.jdbcapi.DriverSpy" );
 
         final String connectionUrl = getConnectionUrl( host, port, database );
         dataSource.setUrl( connectionUrl );
@@ -363,7 +364,8 @@ public class MonetdbStore extends AbstractJdbcStore {
 
 
     private static String getConnectionUrl( final String dbHostname, final int dbPort, final String dbName ) {
-        return String.format( "jdbc:monetdb://%s:%d/%s", dbHostname, dbPort, dbName );
+        // return String.format( "jdbc:monetdb://%s:%d/%s", dbHostname, dbPort, dbName );
+        return String.format( "jdbc:log4jdbc:monetdb://%s:%d/%s", dbHostname, dbPort, dbName );
     }
 
 
